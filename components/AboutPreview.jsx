@@ -2,118 +2,82 @@
 
 import Image from "next/image";
 import Link from "next/link";
-import { motion } from "framer-motion";
-import { HeartHandshake, Sparkles, ShieldCheck } from "lucide-react";
+import { Award, GraduationCap, HeartHandshake } from "lucide-react";
 
-const features = [
-  {
-    icon: HeartHandshake,
-    title: "همدلی",
-    text: "شنیدن بدون قضاوت و همراهی در تمام مسیر.",
-  },
-  {
-    icon: ShieldCheck,
-    title: "اعتماد",
-    text: "فضایی امن، محرمانه و حرفه‌ای برای گفتگو.",
-  },
-  {
-    icon: Sparkles,
-    title: "رشد فردی",
-    text: "کمک به ساختن زندگی آرام‌تر و متعادل‌تر.",
-  },
-];
-
-export default function AboutPreview() {
+export default function About() {
   return (
-    <section className="bg-white py-24">
-      <div className="mx-auto grid max-w-screen-xl items-center gap-20 px-6 lg:grid-cols-2 lg:px-8">
-
+    <section className="bg-[#F3EEE4] py-28">
+      <div className="mx-auto grid max-w-screen-xl items-center gap-16 px-6 lg:grid-cols-2">
+        
         {/* Image */}
+        <div className="relative flex justify-center">
+          <div className="absolute h-[560px] w-[420px] rounded-[70px] bg-[#D9E4D3]" />
 
-        <motion.div
-          initial={{ opacity: 0, x: -40 }}
-          whileInView={{ opacity: 1, x: 0 }}
-          viewport={{ once: true }}
-          transition={{ duration: .7 }}
-          className="relative"
-        >
-          <div className="relative aspect-[4/5] overflow-hidden rounded-[32px]">
+          <div className="relative overflow-hidden rounded-[70px] shadow-2xl">
             <Image
               src="/about.jpg"
               alt="Hoda Moradi"
-              fill
-              className="object-cover"
+              width={460}
+              height={620}
+              className="h-[560px] w-[420px] object-cover"
             />
           </div>
-
-          <div className="absolute -bottom-8 -right-8 rounded-3xl bg-[#F8F7F2] p-6 shadow-xl">
-            <p className="text-sm text-[#667065]">
-              محیطی امن، آرام و حرفه‌ای
-            </p>
-          </div>
-        </motion.div>
+        </div>
 
         {/* Content */}
-
-        <motion.div
-          initial={{ opacity: 0, x: 40 }}
-          whileInView={{ opacity: 1, x: 0 }}
-          viewport={{ once: true }}
-          transition={{ duration: .7 }}
-        >
-          <span className="text-sm font-semibold uppercase tracking-[3px] text-[#6F8A63]">
+        <div className="text-right">
+          <span className="rounded-full bg-[#E8DFC9] px-5 py-2 text-sm text-[#5F7354]">
             درباره من
           </span>
 
-          <h2 className="mt-4 text-4xl font-bold leading-snug text-[#384238]">
-            همراه شما برای رسیدن به
-            <br />
-            آرامش، آگاهی و رشد
+          <h2 className="mt-6 text-4xl font-black leading-relaxed text-[#364033]">
+            همراه شما در مسیر آرامش،
+            رشد و سلامت روان
           </h2>
 
-          <p className="mt-6 leading-9 text-[#5E665A]">
-            من هدی مرادی هستم؛ روانشناس و مشاور حوزه کودک، نوجوان و خانواده.
-            باور دارم هر فرد با دریافت حمایت صحیح می‌تواند مسیر تازه‌ای برای
-            زندگی خود بسازد.
+          <p className="mt-8 leading-9 text-[#6F786C]">
+            من هدی مرادی، روانشناس و مشاور کودک، نوجوان و خانواده هستم.
+            باور دارم هر انسانی شایسته شنیده شدن، درک شدن و تجربه آرامش است.
+            تلاش من ایجاد فضایی امن و حرفه‌ای برای همراهی شما در مسیر حل
+            چالش‌های زندگی و رشد فردی است.
           </p>
 
-          <div className="mt-10 space-y-6">
+          <div className="mt-10 grid gap-6 sm:grid-cols-3">
+            <div className="rounded-3xl bg-white p-6 text-center shadow-md">
+              <Award className="mx-auto mb-4 text-[#7D9B76]" size={34} />
+              <h4 className="font-bold text-[#364033]">
+                گواهینامه‌ها
+              </h4>
+            </div>
 
-            {features.map((item) => {
-              const Icon = item.icon;
+            <div className="rounded-3xl bg-white p-6 text-center shadow-md">
+              <GraduationCap
+                className="mx-auto mb-4 text-[#7D9B76]"
+                size={34}
+              />
+              <h4 className="font-bold text-[#364033]">
+                تخصص علمی
+              </h4>
+            </div>
 
-              return (
-                <div
-                  key={item.title}
-                  className="flex items-start gap-5"
-                >
-                  <div className="rounded-2xl bg-[#EEF3EA] p-3">
-                    <Icon size={24} className="text-[#6F8A63]" />
-                  </div>
-
-                  <div>
-                    <h3 className="font-semibold text-[#384238]">
-                      {item.title}
-                    </h3>
-
-                    <p className="mt-1 text-[#667065]">
-                      {item.text}
-                    </p>
-                  </div>
-                </div>
-              );
-            })}
-
+            <div className="rounded-3xl bg-white p-6 text-center shadow-md">
+              <HeartHandshake
+                className="mx-auto mb-4 text-[#7D9B76]"
+                size={34}
+              />
+              <h4 className="font-bold text-[#364033]">
+                همراهی حرفه‌ای
+              </h4>
+            </div>
           </div>
 
           <Link
             href="/about"
-            className="mt-10 inline-flex rounded-full bg-[#6F8A63] px-8 py-4 font-medium text-white transition-all duration-300 hover:-translate-y-1 hover:bg-[#5D7553]"
+            className="mt-10 inline-flex rounded-full bg-[#5F7354] px-8 py-4 text-white transition hover:bg-[#4E6248]"
           >
-            بیشتر درباره من
+            مشاهده رزومه کامل
           </Link>
-        </motion.div>
-
+        </div>
       </div>
     </section>
   );

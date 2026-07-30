@@ -1,155 +1,167 @@
 "use client";
 
-import { useState, useEffect } from "react";
-import Image from "next/image";
+import { useState } from "react";
 import Link from "next/link";
+import Image from "next/image";
 import { Menu, X } from "lucide-react";
-import { AnimatePresence, motion } from "framer-motion";
+
+const navLinks = [
+  {
+    title: "خانه",
+    href: "/",
+  },
+  {
+    title: "درباره من",
+    href: "/about",
+  },
+  {
+    title: "خدمات",
+    href: "/services",
+  },
+  {
+    title: "گواهینامه‌ها",
+    href: "/certificates",
+  },
+  {
+    title: "تماس با من",
+    href: "/contact",
+  },
+];
 
 export default function Header() {
-    const [isScrolled, setIsScrolled] = useState(false);
-    const [isOpen, setIsOpen] = useState(false);
+  const [isOpen, setIsOpen] = useState(false);
 
-    useEffect(() => {
-        const handleScroll = () => {
-            setIsScrolled(window.scrollY > 30);
-        };
-
-        window.addEventListener("scroll", handleScroll);
-
-        return () => window.removeEventListener("scroll", handleScroll);
-    }, []);
-
-    const navLinks = [
-        { name: "خانه", href: "/" },
-        { name: "درباره من", href: "/about" },
-        { name: "خدمات", href: "/services" },
-        { name: "مقالات", href: "/articles" },
-        { name: "سوالات متداول", href: "/faq" },
-        { name: "رزرو نوبت", href: "/appointment" },
-        { name: "تماس با ما", href: "/contact" },
-    ];
-
-    return (
-        <>
-            <header
-                className={`fixed top-0 left-0 z-50 w-full transition-all duration-500 ${isScrolled
-                        ? "bg-white/80 backdrop-blur-xl border-b border-[#DAD7CD] shadow-sm"
-                        : "bg-transparent"
-                    }`}
+  return (
+    <>
+      <header className="fixed top-0 left-0 z-50 w-full border-b border-white/10 bg-[#5F7354] shadow-lg">
+        <div className="mx-auto flex h-20 max-w-screen-xl items-center justify-between px-6 lg:px-8">
+          {/* رزرو نوبت */}
+          <div className="hidden md:block">
+            <Link
+              href="/appointment"
+              className="rounded-full bg-[#FAF8F3] px-7 py-3 text-sm font-semibold text-[#5F7354] transition-all duration-300 hover:-translate-y-0.5 hover:bg-[#E8DFC9]"
             >
-                <div className="mx-auto flex h-24 max-w-screen-xl items-center justify-between px-6 lg:px-8">
+              رزرو نوبت
+            </Link>
+          </div>
 
-                    {/* Logo */}
+          {/* منو */}
+          <nav className="hidden items-center gap-10 md:flex">
+            {navLinks.map((item) => (
+              <Link
+                key={item.title}
+                href={item.href}
+                className="relative text-[15px] font-medium text-[#FAF8F3] transition duration-300 hover:text-[#E8DFC9] after:absolute after:-bottom-2 after:right-0 after:h-[2px] after:w-0 after:bg-[#FAF8F3] after:transition-all after:duration-300 hover:after:w-full"
+              >
+                {item.title}
+              </Link>
+            ))}
+          </nav>
 
-                    <Link href="/" className="relative h-12 w-36 shrink-0 rounded-b-full">
-                        <Image
-                            src="/logo.jpg"
-                            alt="Hoda Moradi"
-                            fill
-                            className="object-contain"
-                            priority
-                        />
-                    </Link>
+          {/* لوگو */}
+          <Link href="/" className="flex items-center gap-3">
+            <Image
+              src="/logo.png"
+              alt="Hoda Moradi"
+              width={52}
+              height={52}
+              className="rounded-full object-cover"
+            />
 
-                    {/* Desktop Navigation */}
+            <div className="flex flex-col">
+              <span className="text-lg font-semibold tracking-wide text-[#FAF8F3]">
+                Hoda Moradi
+              </span>
 
-                    <nav className="hidden items-center gap-10 lg:flex">
-                        {navLinks.map((item) => (
-                            <Link
-                                key={item.href}
-                                href={item.href}
-                                className="relative text-[15px] font-medium text-[#3D4A3F] transition-colors duration-300 hover:text-[#6B8E5A]"
-                            >
-                                {item.name}
-                            </Link>
-                        ))}
-                    </nav>
+              <span className="text-xs text-[#E8DFC9]">
+                Psychologist
+              </span>
+            </div>
+          </Link>
 
-                    {/* CTA */}
+          {/* Mobile Menu */}
+          <button
+            onClick={() => setIsOpen(true)}
+            className="text-[#FAF8F3] md:hidden"
+          >
+            <Menu size={30} strokeWidth={2.2} />
+          </button>
+        </div>
+      </header>
 
-                    <div className="hidden lg:block">
-                        <Link
-                            href="/appointment"
-                            className="rounded-full bg-[#6B8E5A] px-6 py-3 text-sm font-medium text-white transition-all duration-300 hover:bg-[#587548]"
-                        >
-                            شروع مشاوره
-                        </Link>
-                    </div>
+      {/* Drawer */}
+      <div
+        className={`fixed inset-0 z-[100] transition-all duration-300 ${
+          isOpen
+            ? "visible bg-black/40 backdrop-blur-sm"
+            : "invisible bg-transparent"
+        }`}
+      >
+        <div
+          className={`absolute right-0 top-0 h-full w-[290px] bg-[#5F7354] transition-transform duration-500 ${
+            isOpen ? "translate-x-0" : "translate-x-full"
+          }`}
+        >
+          {/* Header */}
+          <div className="flex items-center justify-between border-b border-white/10 p-6">
+            <div className="flex items-center gap-3">
+              <Image
+                src="/logo.png"
+                alt="logo"
+                width={45}
+                height={45}
+              />
 
-                    {/* Mobile Menu Button */}
+              <div>
+                <h2 className="font-semibold text-white">
+                  Hoda Moradi
+                </h2>
 
-                    <button
-                        onClick={() => setIsOpen(true)}
-                        className="flex h-11 w-11 items-center justify-center rounded-full lg:hidden"
-                    >
-                        <Menu size={28} className="text-[#3D4A3F]" />
-                    </button>
-                </div>
-            </header>
+                <p className="text-xs text-[#E8DFC9]">
+                  Psychologist
+                </p>
+              </div>
+            </div>
 
-            {/* Mobile Drawer */}
+            <button
+              onClick={() => setIsOpen(false)}
+              className="text-white"
+            >
+              <X size={28} />
+            </button>
+          </div>
 
-            <AnimatePresence>
-                {isOpen && (
-                    <>
-                        <motion.div
-                            initial={{ opacity: 0 }}
-                            animate={{ opacity: 1 }}
-                            exit={{ opacity: 0 }}
-                            onClick={() => setIsOpen(false)}
-                            className="fixed inset-0 z-40 bg-black/40 backdrop-blur-sm"
-                        />
+          {/* Links */}
+          <div className="mt-8 flex flex-col px-8">
+            {navLinks.map((item) => (
+              <Link
+                key={item.title}
+                href={item.href}
+                onClick={() => setIsOpen(false)}
+                className="border-b border-white/10 py-4 text-lg text-[#FAF8F3] transition hover:pr-2 hover:text-[#E8DFC9]"
+              >
+                {item.title}
+              </Link>
+            ))}
 
-                        <motion.aside
-                            initial={{ x: "100%" }}
-                            animate={{ x: 0 }}
-                            exit={{ x: "100%" }}
-                            transition={{ duration: 0.35 }}
-                            className="fixed right-0 top-0 z-50 flex h-screen w-[300px] flex-col bg-[#FFFCF7] p-8 shadow-2xl"
-                        >
-                            <div className="mb-12 flex items-center justify-between">
+            <Link
+              href="/appointment"
+              onClick={() => setIsOpen(false)}
+              className="mt-8 rounded-full bg-[#FAF8F3] py-3 text-center font-semibold text-[#5F7354] transition hover:bg-[#E8DFC9]"
+            >
+              رزرو نوبت
+            </Link>
+          </div>
+        </div>
 
-                                <Image
-                                    src="/logo.png"
-                                    alt="Hoda Moradi"
-                                    width={120}
-                                    height={50}
-                                />
+        <button
+          className="absolute inset-0 -z-10"
+          onClick={() => setIsOpen(false)}
+        />
+      </div>
 
-                                <button onClick={() => setIsOpen(false)}>
-                                    <X size={28} />
-                                </button>
-
-                            </div>
-
-                            <div className="flex flex-col gap-7">
-
-                                {navLinks.map((item) => (
-                                    <Link
-                                        key={item.href}
-                                        href={item.href}
-                                        onClick={() => setIsOpen(false)}
-                                        className="text-lg font-medium text-[#3D4A3F] transition hover:text-[#6B8E5A]"
-                                    >
-                                        {item.name}
-                                    </Link>
-                                ))}
-
-                            </div>
-
-                            <Link
-                                href="/appointment"
-                                onClick={() => setIsOpen(false)}
-                                className="mt-auto rounded-full bg-[#6B8E5A] py-4 text-center font-medium text-white transition hover:bg-[#587548]"
-                            >
-                                شروع مشاوره
-                            </Link>
-
-                        </motion.aside>
-                    </>
-                )}
-            </AnimatePresence>
-        </>
-    );
+      {/* Spacer */}
+      <div className="h-20" />
+    </>
+  );
 }

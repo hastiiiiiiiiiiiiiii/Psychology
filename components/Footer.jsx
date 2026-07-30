@@ -1,19 +1,12 @@
 "use client";
 
+import Image from "next/image";
 import Link from "next/link";
-import { motion } from "framer-motion";
 import {
   Phone,
   Mail,
-  Clock3,
   MapPin,
 } from "lucide-react";
-
-import {
-  FaInstagram,
-  FaTelegramPlane,
-  FaWhatsapp,
-} from "react-icons/fa";
 
 const quickLinks = [
   {
@@ -29,167 +22,119 @@ const quickLinks = [
     href: "/services",
   },
   {
-    title: "مقالات",
-    href: "/articles",
+    title: "گواهینامه‌ها",
+    href: "/certificates",
   },
   {
-    title: "تماس با ما",
+    title: "رزرو نوبت",
+    href: "/appointment",
+  },
+  {
+    title: "تماس با من",
     href: "/contact",
   },
 ];
 
 export default function Footer() {
   return (
-    <footer className="bg-[#1B231C] text-white">
-      <div className="mx-auto max-w-screen-xl px-6 py-20 lg:px-8">
-
-        <div className="grid gap-14 md:grid-cols-2 lg:grid-cols-3">
-
+    <footer className="bg-[#5F7354] text-[#FAF8F3]">
+      <div className="mx-auto max-w-screen-xl px-6 py-20">
+        <div className="grid gap-14 lg:grid-cols-3">
           {/* Brand */}
+          <div>
+            <Link href="/" className="flex items-center gap-4">
+              <Image
+                src="/logo.png"
+                alt="Hoda Moradi"
+                width={60}
+                height={60}
+                className="rounded-full"
+              />
 
-          <motion.div
-            initial={{ opacity: 0, y: 30 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            transition={{ duration: .6 }}
-          >
-            <h2 className="text-3xl font-black">
-              Hoda Moradi
-            </h2>
+              <div>
+                <h2 className="text-2xl font-bold">
+                  Hoda Moradi
+                </h2>
 
-            <p className="mt-6 leading-9 text-white/70">
-              همراه شما در مسیر آرامش، رشد فردی و داشتن
-              زندگی متعادل‌تر. فضایی امن، حرفه‌ای و
-              قابل اعتماد برای آغاز یک تغییر مثبت.
+                <p className="text-sm text-[#E8DFC9]">
+                  Psychologist
+                </p>
+              </div>
+            </Link>
+
+            <p className="mt-6 leading-8 text-[#E8DFC9]">
+              ایجاد فضایی امن، آرام و حرفه‌ای برای همراهی کودکان،
+              نوجوانان و خانواده‌ها در مسیر رشد، سلامت روان و
+              زندگی بهتر.
             </p>
+          </div>
 
-            <div className="mt-8 flex gap-4">
-              <Link
-                href="#"
-                className="rounded-full border border-white/15 bg-white/5 p-3 transition hover:bg-[#6F8A63]"
-              >
-                <FaInstagram size={20} />
-              </Link>
-
-              <Link
-                href="#"
-                className="rounded-full border border-white/15 bg-white/5 p-3 transition hover:bg-[#6F8A63]"
-              >
-                <Phone size={20} />
-              </Link>
-
-              <Link
-                href="#"
-                className="rounded-full border border-white/15 bg-white/5 p-3 transition hover:bg-[#6F8A63]"
-              >
-                <Mail size={20} />
-              </Link>
-            </div>
-          </motion.div>
-
-          {/* Links */}
-
-          <motion.div
-            initial={{ opacity: 0, y: 30 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            transition={{ delay: .15 }}
-          >
-            <h3 className="text-xl font-bold">
+          {/* Quick Links */}
+          <div>
+            <h3 className="mb-6 text-xl font-semibold">
               دسترسی سریع
             </h3>
 
-            <ul className="mt-8 space-y-5">
+            <ul className="space-y-4">
               {quickLinks.map((item) => (
                 <li key={item.title}>
                   <Link
                     href={item.href}
-                    className="text-white/70 transition hover:text-[#9BC18A]"
+                    className="transition hover:pr-2 hover:text-[#E8DFC9]"
                   >
                     {item.title}
                   </Link>
                 </li>
               ))}
             </ul>
-          </motion.div>
+          </div>
 
           {/* Contact */}
-
-          <motion.div
-            initial={{ opacity: 0, y: 30 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            transition={{ delay: .3 }}
-          >
-            <h3 className="text-xl font-bold">
+          <div>
+            <h3 className="mb-6 text-xl font-semibold">
               اطلاعات تماس
             </h3>
 
-            <div className="mt-8 space-y-6">
-
-              <div className="flex items-center gap-4">
-                <Phone
-                  size={20}
-                  className="text-[#9BC18A]"
-                />
-                <span className="text-white/70">
-                  0912 000 0000
-                </span>
+            <div className="space-y-5">
+              <div className="flex items-center gap-3">
+                <Phone size={20} />
+                <span>0912 123 4567</span>
               </div>
 
-              <div className="flex items-center gap-4">
-                <Mail
-                  size={20}
-                  className="text-[#9BC18A]"
-                />
-                <span className="text-white/70">
-                  info@hodamoradi.com
-                </span>
+              <div className="flex items-center gap-3">
+                <Mail size={20} />
+                <span>info@example.com</span>
               </div>
 
-              <div className="flex items-center gap-4">
-                <Clock3
-                  size={20}
-                  className="text-[#9BC18A]"
-                />
-                <span className="text-white/70">
-                  شنبه تا چهارشنبه | ۹ الی ۱۸
-                </span>
+              <div className="flex items-center gap-3">
+                <MapPin size={20} />
+                <span>تهران، ایران</span>
               </div>
 
-              <div className="flex items-center gap-4">
-                <MapPin
-                  size={20}
-                  className="text-[#9BC18A]"
-                />
-                <span className="text-white/70">
-                  تهران، ایران
-                </span>
-              </div>
-
+              <a
+                href="#"
+                className="mt-6 flex w-fit items-center gap-3 rounded-full border border-white/20 px-5 py-3 transition hover:bg-white hover:text-[#5F7354]"
+              >
+                
+                Instagram
+              </a>
             </div>
-          </motion.div>
-
-        </div>
-
-        {/* Bottom */}
-
-        <div className="mt-16 border-t border-white/10 pt-8">
-
-          <div className="flex flex-col items-center justify-between gap-4 text-center md:flex-row">
-
-            <p className="text-sm text-white/50">
-              © 2026 Hoda Moradi. تمامی حقوق محفوظ است.
-            </p>
-
-            <p className="text-sm text-white/40">
-              Designed & Developed with ❤️
-            </p>
-
           </div>
-
         </div>
 
+        {/* Divider */}
+        <div className="my-10 h-px bg-white/15" />
+
+        {/* Copyright */}
+        <div className="flex flex-col items-center justify-between gap-4 text-center text-sm text-[#E8DFC9] md:flex-row">
+          <p>
+            © 2026 Hoda Moradi. تمامی حقوق این وب‌سایت محفوظ است.
+          </p>
+
+          <p>
+            Designed & Developed with ❤️
+          </p>
+        </div>
       </div>
     </footer>
   );

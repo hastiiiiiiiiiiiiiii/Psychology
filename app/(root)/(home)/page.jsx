@@ -1,11 +1,11 @@
 import AboutPreview from '@/components/AboutPreview'
-import CTA from '@/components/CTA'
-import Footer from '@/components/Footer'
 import Hero from '@/components/Hero'
 import Services from '@/components/Services'
-import Testimonials from '@/components/Testimonials'
-import WhyChooseUs from '@/components/WhyChooseUs'
 import React from 'react'
+import Certificates from '@/components/Certificates'
+import AppointmentCTA from '@/components/AppointmentCTA'
+import Contact from '@/components/Contact'
+
 
 function page() {
   return (
@@ -13,9 +13,9 @@ function page() {
       <Hero/>
       <AboutPreview/>
       <Services/>
-      <WhyChooseUs/>
-      <Testimonials/>
-      <CTA/>
+      <Certificates/>
+      <AppointmentCTA/>
+      <Contact/>
       
     </div>
   )
