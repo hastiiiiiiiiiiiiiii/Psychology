@@ -12,7 +12,7 @@ const navLinks = [
   },
   {
     title: "درباره من",
-    href: "/About",
+    href: "/about",
   },
   {
     title: "خدمات",
