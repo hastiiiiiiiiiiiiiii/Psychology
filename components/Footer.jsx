@@ -15,7 +15,7 @@ const quickLinks = [
   },
   {
     title: "درباره من",
-    href: "/about",
+    href: "/About",
   },
   {
     title: "خدمات",

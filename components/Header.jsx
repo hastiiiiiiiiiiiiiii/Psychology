@@ -12,14 +12,14 @@ const navLinks = [
   },
   {
     title: "درباره من",
-    href: "/about",
+    href: "/About",
   },
   {
     title: "خدمات",
     href: "/services",
   },
   {
-    title: "گواهینامه‌ها",
+    title: "مجوز ها",
     href: "/certificates",
   },
   {
