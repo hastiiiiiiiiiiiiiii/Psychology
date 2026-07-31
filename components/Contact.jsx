@@ -18,7 +18,7 @@ export default function Contact() {
 
           <div className="relative overflow-hidden rounded-[50px] shadow-2xl">
             <Image
-              src="/contact.jpg"
+              src="/contact1.png"
               alt="Contact"
               width={600}
               height={750}
