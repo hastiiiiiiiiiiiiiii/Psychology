@@ -32,9 +32,9 @@ export default function Contact() {
             className="object-cover"
           />
 
-          <div className="absolute inset-0 bg-[#20311F]/65" />
+          <div className="absolute inset-0 bg-[#20311F]/55" />
 
-          <div className="absolute inset-0 bg-gradient-to-b from-[#20311F]/30 via-[#20311F]/60 to-[#FCFCF8]" />
+          <div className="absolute inset-0 bg-gradient-to-b from-[#20311F]/25 via-[#20311F]/60 to-[#FCFCF5]" />
 
         </div>
 

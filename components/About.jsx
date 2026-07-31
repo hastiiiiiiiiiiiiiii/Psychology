@@ -38,7 +38,7 @@ export default function About() {
               <div className="relative overflow-hidden rounded-[36px] border border-[#D6DFCF] bg-white shadow-[0_30px_80px_rgba(0,0,0,.08)]">
 
                 <Image
-                  src="/about.jpg"
+                  src="/about.png"
                   alt="Hoda Moradi"
                   width={500}
                   height={700}

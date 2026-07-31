@@ -31,15 +31,15 @@ export default function Services() {
         <div className="absolute inset-0">
 
           <Image
-            src="/services.jpg"
+            src="/services.png"
             alt="Psychology Services"
             fill
             priority
             className="object-cover"
           />
 
-          <div className="absolute inset-0 bg-[#20311F]/60" />
-          <div className="absolute inset-0 bg-gradient-to-b from-[#20311F]/40 via-[#20311F]/60 to-[#FCFCF8]" />
+          <div className="absolute inset-0 bg-[#20311F]/50" />
+          <div className="absolute inset-0 bg-gradient-to-b from-[#20311F]/40 via-[#20311F]/60 to-[#FCFCF6]" />
 
         </div>
 

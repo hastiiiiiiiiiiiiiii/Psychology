@@ -25,16 +25,16 @@ export default function Certificates() {
         <div className="absolute inset-0">
 
           <Image
-            src="/certificates-hero.jpg"
+            src="/certificates-hero.png"
             alt="Certificates"
             fill
             priority
             className="object-cover"
           />
 
-          <div className="absolute inset-0 bg-[#20311F]/65" />
+          <div className="absolute inset-0 bg-[#20311F]/60" />
 
-          <div className="absolute inset-0 bg-gradient-to-b from-[#20311F]/30 via-[#20311F]/60 to-[#FCFCF8]" />
+          <div className="absolute inset-0 bg-gradient-to-b from-[#20311F]/30 via-[#20311F]/60 to-[#FCFCF5]" />
 
         </div>
 
@@ -268,7 +268,7 @@ export default function Certificates() {
               <div className="relative h-[380px] overflow-hidden">
 
                 <Image
-                  src="/certificate-1.jpg"
+                  src="/certificate-1.png"
                   alt="Professional License"
                   fill
                   className="object-cover transition duration-700 group-hover:scale-105"
@@ -454,10 +454,10 @@ export default function Certificates() {
 
             <div className="group overflow-hidden rounded-[30px] bg-white border border-[#E2E7DF] shadow-sm transition duration-500 hover:-translate-y-2 hover:shadow-xl">
 
-              <div className="relative h-[430px] overflow-hidden">
+              <div className="relative h-[470px] overflow-hidden">
 
                 <Image
-                  src="/gallery-1.jpg"
+                  src="/gallery-1.jpeg"
                   alt="Certificate"
                   fill
                   className="object-cover transition duration-700 group-hover:scale-105"
@@ -475,10 +475,10 @@ export default function Certificates() {
 
             <div className="group overflow-hidden rounded-[30px] bg-white border border-[#E2E7DF] shadow-sm transition duration-500 hover:-translate-y-2 hover:shadow-xl">
 
-              <div className="relative h-[300px] overflow-hidden">
+              <div className="relative h-[470px] overflow-hidden">
 
                 <Image
-                  src="/gallery-2.jpg"
+                  src="/gallery-2.jpeg"
                   alt="Certificate"
                   fill
                   className="object-cover transition duration-700 group-hover:scale-105"
@@ -496,10 +496,10 @@ export default function Certificates() {
 
             <div className="group overflow-hidden rounded-[30px] bg-white border border-[#E2E7DF] shadow-sm transition duration-500 hover:-translate-y-2 hover:shadow-xl">
 
-              <div className="relative h-[520px] overflow-hidden">
+              <div className="relative h-[470px] overflow-hidden">
 
                 <Image
-                  src="/gallery-3.jpg"
+                  src="/gallery-3.jpeg"
                   alt="Certificate"
                   fill
                   className="object-cover transition duration-700 group-hover:scale-105"
@@ -517,10 +517,10 @@ export default function Certificates() {
 
             <div className="group overflow-hidden rounded-[30px] bg-white border border-[#E2E7DF] shadow-sm transition duration-500 hover:-translate-y-2 hover:shadow-xl">
 
-              <div className="relative h-[350px] overflow-hidden">
+              <div className="relative h-[470px] overflow-hidden">
 
                 <Image
-                  src="/gallery-4.jpg"
+                  src="/gallery-4.jpeg"
                   alt="Certificate"
                   fill
                   className="object-cover transition duration-700 group-hover:scale-105"
@@ -541,7 +541,7 @@ export default function Certificates() {
               <div className="relative h-[470px] overflow-hidden">
 
                 <Image
-                  src="/gallery-5.jpg"
+                  src="/gallery-5.jpeg"
                   alt="Certificate"
                   fill
                   className="object-cover transition duration-700 group-hover:scale-105"
@@ -559,10 +559,10 @@ export default function Certificates() {
 
             <div className="group overflow-hidden rounded-[30px] bg-white border border-[#E2E7DF] shadow-sm transition duration-500 hover:-translate-y-2 hover:shadow-xl">
 
-              <div className="relative h-[330px] overflow-hidden">
+              <div className="relative h-[470px] overflow-hidden">
 
                 <Image
-                  src="/gallery-6.jpg"
+                  src="/gallery-6.jpeg"
                   alt="Certificate"
                   fill
                   className="object-cover transition duration-700 group-hover:scale-105"

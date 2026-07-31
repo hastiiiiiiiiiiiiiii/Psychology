@@ -16,7 +16,6 @@ function page() {
       <Certificates/>
       <AppointmentCTA/>
       <Contact/>
-      
     </div>
   )
 }

@@ -107,7 +107,7 @@ export default function Hero() {
 
             <div className="relative overflow-hidden rounded-[80px] shadow-2xl">
               <Image
-                src="/logo.jpg"
+                src="/logo1.jpg"
                 alt="Hoda Moradi"
                 width={550}
                 height={750}

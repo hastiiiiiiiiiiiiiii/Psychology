@@ -7,19 +7,19 @@ import { Award } from "lucide-react";
 const certificates = [
   {
     title: "پروانه فعالیت تخصصی",
-    image: "/certificates/certificate1.jpg",
+    image: "/certificate1.jpg",
   },
   {
     title: "گواهینامه روانشناسی کودک",
-    image: "/certificates/certificate2.jpg",
+    image: "/certificate2.jpg",
   },
   {
     title: "گواهینامه مشاوره خانواده",
-    image: "/certificates/certificate3.jpg",
+    image: "/certificate3.jpg",
   },
   {
     title: "دوره‌های تخصصی روانشناسی",
-    image: "/certificates/certificate4.jpg",
+    image: "/certificate4.jpg",
   },
 ];
 

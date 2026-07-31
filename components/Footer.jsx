@@ -44,7 +44,7 @@ export default function Footer() {
           <div>
             <Link href="/" className="flex items-center gap-4">
               <Image
-                src="/logo.png"
+                src="/hodamoradi.jpg"
                 alt="Hoda Moradi"
                 width={60}
                 height={60}

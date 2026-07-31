@@ -7,25 +7,25 @@ import { ArrowLeft } from "lucide-react";
 const services = [
   {
     title: "مشاوره کودک",
-    image: "/services/child.jpg",
+    image: "/child.jpg",
     description:
       "کمک به رشد عاطفی، رفتاری و اجتماعی کودکان در محیطی امن و تخصصی.",
   },
   {
     title: "مشاوره نوجوان",
-    image: "/services/teen.jpg",
+    image: "/teen.jpg",
     description:
       "همراهی نوجوانان در مدیریت چالش‌های دوران رشد، تحصیل و روابط.",
   },
   {
     title: "مشاوره خانواده",
-    image: "/services/family.jpg",
+    image: "/family.jpg",
     description:
       "بهبود ارتباط میان اعضای خانواده و ایجاد فضایی سالم و آرام.",
   },
   {
     title: "فرزندپروری",
-    image: "/services/parenting.jpg",
+    image: "/parenting.jpg",
     description:
       "آموزش مهارت‌های تربیتی و ایجاد ارتباط مؤثر میان والدین و فرزندان.",
   },

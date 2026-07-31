@@ -61,7 +61,7 @@ export default function Header() {
           {/* لوگو */}
           <Link href="/" className="flex items-center gap-3">
             <Image
-              src="/logo.png"
+              src="/hodamoradi.jpg"
               alt="Hoda Moradi"
               width={52}
               height={52}
